@@ -1,15 +1,14 @@
 # Multi-stage build for fullstack app
 
 # Stage 1: Build frontend
-FROM node:18-alpine as frontend-builder
+FROM node:18-alpine AS frontend-builder
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN npm ci --only=production
 COPY frontend/src ./src
-COPY frontend/index.html ./
 
 # Stage 2: Build backend
-FROM python:3.11-slim as backend-builder
+FROM python:3.11-slim AS backend-builder
 WORKDIR /app/backend
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
