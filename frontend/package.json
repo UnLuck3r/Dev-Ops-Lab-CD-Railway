@@ -1,0 +1,17 @@
+{
+  "name": "fullstack-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for fullstack application",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve -s build -l 3000",
+    "build": "echo 'Frontend is using HTML/CSS/JS - no build needed'",
+    "test": "echo 'Frontend tests would go here'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.1.2"
+  }
+}

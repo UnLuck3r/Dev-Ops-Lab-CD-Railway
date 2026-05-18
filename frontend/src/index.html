@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Student Management System</h1>
+            <p class="subtitle">Three-Tier Architecture Demo</p>
+        </header>
+
+        <main>
+            <!-- Add Student Form -->
+            <section class="form-section">
+                <h2>Add New Student</h2>
+                <form id="addStudentForm">
+                    <div class="form-group">
+                        <label for="studentName">Student Name *</label>
+                        <input 
+                            type="text" 
+                            id="studentName" 
+                            placeholder="Enter full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentEmail">Email</label>
+                        <input 
+                            type="email" 
+                            id="studentEmail" 
+                            placeholder="Enter email"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="studentCourse">Course</label>
+                        <input 
+                            type="text" 
+                            id="studentCourse" 
+                            placeholder="Enter course name"
+                        >
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Add Student</button>
+                    <div id="formMessage" class="message"></div>
+                </form>
+            </section>
+
+            <!-- Students List -->
+            <section class="list-section">
+                <h2>Students List</h2>
+                <div id="loadingSpinner" class="spinner hidden">
+                    <div class="spinner-animation"></div>
+                    <p>Loading students...</p>
+                </div>
+                <table id="studentsTable" class="students-table hidden">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Added Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentsBody">
+                        <!-- Students will be added here by JavaScript -->
+                    </tbody>
+                </table>
+                <div id="emptyMessage" class="empty-message">
+                    📭 No students yet. Add one to get started!
+                </div>
+                <div id="errorMessage" class="error-message hidden"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>DevOps Labs - Full Stack Application with CI/CD Pipeline</p>
+            <p class="api-status">API Status: <span id="apiStatus" class="status-connecting">Connecting...</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
